@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RumahKIA – Pendamping ibu hamil untuk edukasi ANC, nutrisi, tanda bahaya, dan jadwal imunisasi anak." />
+  <title>RumahKIA – Pendamping Kehamilan & Imunisasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+/* =============================================
+   RumahKIA – Premium Landing Page Styles
+   Colors: Cream #EDDCCE + Pink Magenta
+   ============================================= */
+
+:root {
+  --cream: #EDDCCE;
+  --cream-light: #F5EDE4;
+  --cream-dark: #D4C4B5;
+  --magenta: #C2185B;
+  --magenta-light: #E91E8C;
+  --magenta-dark: #880E4F;
+  --magenta-soft: rgba(194, 24, 91, 0.08);
+  --white: #FFFBF8;
+  --text: #3D2C2E;
+  --text-muted: #7A6568;
+  --success: #2E7D52;
+  --danger: #C62828;
+  --warning: #E65100;
+  --shadow-sm: 0 2px 8px rgba(61, 44, 46, 0.06);
+  --shadow-md: 0 8px 24px rgba(61, 44, 46, 0.1);
+  --shadow-lg: 0 16px 48px rgba(194, 24, 91, 0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.mt-sm { margin-top: 12px; }
+.mt-lg { margin-top: 32px; }
+.hidden { display: none !important; }
+
+/* ========== HEADER / NAV ========== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 251, 248, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(237, 220, 206, 0.6);
+  transition: var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.nav__logo-icon {
+  color: var(--magenta);
+  font-size: 1.6rem;
+}
+
+.nav__logo-text strong {
+  color: var(--magenta);
+}
+
+.nav__menu {
+  display: flex;
+  gap: 4px;
+}
+
+.nav__link {
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.nav__link:hover,
+.nav__link.active {
+  color: var(--magenta);
+  background: var(--magenta-soft);
+}
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav__toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--magenta);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ========== HERO / BERANDA ========== */
+.hero {
+  position: relative;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(194, 24, 91, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(237, 220, 206, 0.5) 0%, transparent 50%),
+    linear-gradient(180deg, var(--cream-light) 0%, var(--white) 100%);
+  z-index: -1;
+}
+
+.hero__text {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+
+.hero__badge {
+  display: inline-block;
+  padding: 6px 18px;
+  background: var(--magenta-soft);
+  color: var(--magenta);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero__title span {
+  color: var(--magenta);
+}
+
+.hero__desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Dashboard */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.dashboard__card {
+  background: var(--white);
+  border: 1px solid var(--cream);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.dashboard__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.dashboard__card--primary {
+  background: linear-gradient(135deg, var(--magenta) 0%, var(--magenta-light) 100%);
+  border: none;
+  color: white;
+}
+
+.dashboard__card--primary .dashboard__label,
+.dashboard__card--primary .dashboard__sub {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dashboard__icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.dashboard__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.dashboard__value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.dashboard__sub {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Quick Access */
+.quick-access__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.quick-access__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.quick-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 12px;
+  background: var(--white);
+  border: 1px solid var(--cream);
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.quick-btn span {
+  font-size: 1.6rem;
+}
+
+.quick-btn:hover {
+  background: var(--magenta);
+  color: white;
+  border-color: var(--magenta);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========== SECTIONS ========== */
+.section {
+  padding: 80px 0;
+}
+
+.section--alt {
+  background: var(--cream-light);
+}
+
+.section__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+
+.section__badge {
+  display: inline-block;
+  padding: 5px 16px;
+  background: var(--magenta-soft);
+  color: var(--magenta);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.section__desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ========== INFO CARDS ========== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cards-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.info-card {
+  background: var(--white);
+  border: 1px solid var(--cream);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.info-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.info-card--highlight {
+  border-color: var(--magenta);
+  border-width: 2px;
+  background: linear-gradient(135deg, var(--white) 0%, var(--cream-light) 100%);
+}
+
+.info-card--green {
+  border-color: rgba(46, 125, 82, 0.3);
+}
+
+.info-card--danger {
+  border-color: rgba(198, 40, 40, 0.3);
+  background: #FFF5F5;
+}
+
+.info-card__icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.info-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.info-card p {
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.info-card ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+
+.info-card ul li {
+  margin-bottom: 6px;
+}
+
+.info-card ul li strong {
+  color: var(--text);
+}
+
+/* Schedule Table */
+.schedule-table {
+  margin-top: 8px;
+}
+
+.schedule-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--cream);
+  font-size: 0.9rem;
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+}
+
+.schedule-row span:first-child {
+  font-weight: 600;
+  color: var(--magenta);
+}
+
+.schedule-row span:last-child {
+  color: var(--text-muted);
+  text-align: right;
+}
+
+/* Tips Box */
+.tips-box {
+  margin-top: 32px;
+  background: linear-gradient(135deg, var(--magenta) 0%, var(--magenta-light) 100%);
+  border-radius: var(--radius);
+  padding: 32px;
+  color: white;
+}
+
+.tips-box h3 {
+  font-family: var(--font-display);
+  margin-bottom: 20px;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.tip-item {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.tip-item strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Food Tags */
+.food-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.food-tag {
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.food-tag--good {
+  background: rgba(46, 125, 82, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(46, 125, 82, 0.2);
+}
+
+.food-tag--bad {
+  background: rgba(198, 40, 40, 0.08);
+  color: var(--danger);
+  border: 1px solid rgba(198, 40, 40, 0.2);
+}
+
+/* ========== DANGER SIGNS ========== */
+.danger-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.danger-card {
+  background: var(--white);
+  border: 1px solid var(--cream);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.danger-card:hover {
+  border-color: var(--danger);
+  box-shadow: 0 4px 20px rgba(198, 40, 40, 0.1);
+}
+
+.danger-card__icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.danger-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--danger);
+}
+
+.danger-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.danger-card__action {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--magenta);
+  padding: 8px 12px;
+  background: var(--magenta-soft);
+  border-radius: var(--radius-sm);
+}
+
+/* Emergency Box */
+.emergency-box {
+  display: flex;
+  gap: 24px;
+  background: linear-gradient(135deg, #FFF5F5 0%, var(--cream-light) 100%);
+  border: 2px solid var(--danger);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+
+.emergency-box__icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.emergency-box h3 {
+  font-family: var(--font-display);
+  color: var(--danger);
+  margin-bottom: 8px;
+}
+
+.emergency-box ol {
+  list-style: decimal;
+  padding-left: 20px;
+  color: var(--text-muted);
+  margin: 12px 0;
+}
+
+.emergency-box ol li {
+  margin-bottom: 4px;
+}
+
+.emergency-hotline {
+  margin-top: 12px;
+  font-size: 1.1rem;
+}
+
+.emergency-hotline strong {
+  color: var(--danger);
+  font-size: 1.3rem;
+}
+
+/* ========== IMMUNIZATION ========== */
+.immun-status {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.immun-stat {
+  background: var(--white);
+  border: 1px solid var(--cream);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+
+.immun-stat__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--magenta);
+}
+
+.immun-stat span:last-child {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.immun-stat--next {
+  background: linear-gradient(135deg, var(--magenta-soft) 0%, var(--cream-light) 100%);
+  border-color: var(--magenta);
+}
+
+.immun-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.immun-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--white);
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  transition: var(--transition);
+}
+
+.immun-item.done {
+  border-color: rgba(46, 125, 82, 0.3);
+  background: rgba(46, 125, 82, 0.04);
+}
+
+.immun-item__check {
+  width: 24px;
+  height: 24px;
+  accent-color: var(--success);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.immun-item__info {
+  flex: 1;
+}
+
+.immun-item__name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.immun-item__age {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.immun-item__status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.immun-item__status--done {
+  background: rgba(46, 125, 82, 0.1);
+  color: var(--success);
+}
+
+.immun-item__status--pending {
+  background: rgba(230, 81, 0, 0.1);
+  color: var(--warning);
+}
+
+.immun-item__status--upcoming {
+  background: var(--magenta-soft);
+  color: var(--magenta);
+}
+
+/* ========== QUIZ ========== */
+.quiz-categories {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.quiz-cat-btn {
+  padding: 10px 20px;
+  border: 2px solid var(--cream);
+  border-radius: 50px;
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-muted);
+}
+
+.quiz-cat-btn:hover,
+.quiz-cat-btn.active {
+  border-color: var(--magenta);
+  background: var(--magenta);
+  color: white;
+}
+
+.quiz-container {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--cream);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+}
+
+.quiz-progress {
+  height: 6px;
+  background: var(--cream);
+  border-radius: 3px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.quiz-progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--magenta), var(--magenta-light));
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.quiz-number {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--magenta);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quiz-question h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin: 8px 0 20px;
+  line-height: 1.4;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 2px solid var(--cream);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+.quiz-option:hover {
+  border-color: var(--magenta);
+  background: var(--magenta-soft);
+}
+
+.quiz-option.selected {
+  border-color: var(--magenta);
+  background: var(--magenta-soft);
+}
+
+.quiz-option.correct {
+  border-color: var(--success);
+  background: rgba(46, 125, 82, 0.08);
+}
+
+.quiz-option.wrong {
+  border-color: var(--danger);
+  background: rgba(198, 40, 40, 0.06);
+}
+
+.quiz-option input {
+  accent-color: var(--magenta);
+}
+
+.quiz-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+
+.quiz-result {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--cream);
+  border-radius: var(--radius);
+  padding: 48px 32px;
+  box-shadow: var(--shadow-md);
+}
+
+.quiz-result__icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.quiz-score {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--magenta);
+  margin: 16px 0;
+}
+
+/* ========== PROFILE ========== */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.profile-form,
+.profile-history {
+  background: var(--white);
+  border: 1px solid var(--cream);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-form h3,
+.profile-history h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--cream);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--cream);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--white);
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--magenta);
+  box-shadow: 0 0 0 3px var(--magenta-soft);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.history-list {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cream);
+  font-size: 0.9rem;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-item__visit {
+  font-weight: 600;
+  color: var(--magenta);
+}
+
+.history-item__week {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.empty-state {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.pregnancy-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.preg-info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cream);
+  font-size: 0.9rem;
+}
+
+.preg-info-item span {
+  color: var(--text-muted);
+}
+
+.preg-info-item strong {
+  color: var(--magenta);
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--magenta) 0%, var(--magenta-light) 100%);
+  color: white;
+  border-color: var(--magenta);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--magenta);
+  border-color: var(--magenta);
+}
+
+.btn--outline:hover {
+  background: var(--magenta-soft);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background: var(--text);
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: 60px;
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footer__brand .nav__logo-icon {
+  font-size: 1.4rem;
+}
+
+.footer__brand span {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: white;
+}
+
+.footer__brand strong {
+  color: var(--magenta-light);
+}
+
+.footer__brand p {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer__links h4,
+.footer__contact h4 {
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer__links a {
+  display: block;
+  padding: 4px 0;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+}
+
+.footer__links a:hover {
+  color: var(--magenta-light);
+}
+
+.footer__contact p {
+  font-size: 0.875rem;
+  margin-bottom: 4px;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ========== TOAST ========== */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 14px 24px;
+  background: var(--text);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  z-index: 9999;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast--success {
+  background: var(--success);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+  .dashboard { grid-template-columns: 1fr; }
+  .quick-access__grid { grid-template-columns: repeat(3, 1fr); }
+  .cards-grid,
+  .cards-grid--2 { grid-template-columns: 1fr; }
+  .tips-grid { grid-template-columns: 1fr; }
+  .danger-grid { grid-template-columns: repeat(2, 1fr); }
+  .profile-layout { grid-template-columns: 1fr; }
+  .footer__content { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav__toggle { display: flex; }
+
+  .nav__menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    padding: 16px 24px 24px;
+    border-bottom: 1px solid var(--cream);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: var(--transition);
+    pointer-events: none;
+  }
+
+  .nav__menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav__link {
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+  }
+
+  .quick-access__grid { grid-template-columns: repeat(2, 1fr); }
+  .danger-grid { grid-template-columns: 1fr; }
+  .immun-status { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .emergency-box { flex-direction: column; }
+  .footer__content { grid-template-columns: 1fr; }
+  .form-actions { flex-direction: column; }
+  .quiz-actions { flex-direction: column; gap: 10px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 100px 0 60px; }
+  .section { padding: 60px 0; }
+  .info-card { padding: 24px; }
+  .quiz-container { padding: 24px 16px; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#beranda" class="nav__logo">
+        <span class="nav__logo-icon">♡</span>
+        <span class="nav__logo-text">Rumah<strong>KIA</strong></span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#beranda" class="nav__link active">Beranda</a></li>
+        <li><a href="#edukasi-anc" class="nav__link">Edukasi ANC</a></li>
+        <li><a href="#nutrisi" class="nav__link">Nutrisi</a></li>
+        <li><a href="#tanda-bahaya" class="nav__link">Tanda Bahaya</a></li>
+        <li><a href="#imunisasi" class="nav__link">Imunisasi</a></li>
+        <li><a href="#kuis" class="nav__link">Kuis</a></li>
+        <li><a href="#profil" class="nav__link">Profil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero / Beranda -->
+  <section class="hero" id="beranda">
+    <div class="hero__bg"></div>
+    <div class="container hero__content">
+      <div class="hero__text">
+        <span class="hero__badge">Pendamping Ibu Hamil Terpercaya</span>
+        <h1 class="hero__title">Selamat Datang di <span>RumahKIA</span></h1>
+        <p class="hero__desc">Platform edukasi kesehatan ibu hamil dan imunisasi anak — sederhana, responsif, dan mudah digunakan setiap hari.</p>
+      </div>
+
+      <!-- Dashboard Cards -->
+      <div class="dashboard" id="dashboard">
+        <div class="dashboard__card dashboard__card--primary">
+          <div class="dashboard__icon">🤰</div>
+          <div class="dashboard__info">
+            <span class="dashboard__label">Usia Kehamilan</span>
+            <span class="dashboard__value" id="dashGestationalAge">—</span>
+            <span class="dashboard__sub" id="dashDueDate">Lengkapi profil untuk melihat</span>
+          </div>
+        </div>
+        <div class="dashboard__card">
+          <div class="dashboard__icon">📅</div>
+          <div class="dashboard__info">
+            <span class="dashboard__label">ANC Berikutnya</span>
+            <span class="dashboard__value" id="dashNextANC">—</span>
+            <span class="dashboard__sub" id="dashANCDetail">Kunjungan ke-—</span>
+          </div>
+        </div>
+        <div class="dashboard__card">
+          <div class="dashboard__icon">💊</div>
+          <div class="dashboard__info">
+            <span class="dashboard__label">Ringkasan Kesehatan</span>
+            <span class="dashboard__value" id="dashHealth">—</span>
+            <span class="dashboard__sub" id="dashHealthDetail">Tekanan darah & berat badan</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Access -->
+      <div class="quick-access">
+        <h3 class="quick-access__title">Akses Cepat</h3>
+        <div class="quick-access__grid">
+          <a href="#edukasi-anc" class="quick-btn"><span>📋</span> Edukasi ANC</a>
+          <a href="#nutrisi" class="quick-btn"><span>🥗</span> Nutrisi</a>
+          <a href="#tanda-bahaya" class="quick-btn"><span>⚠️</span> Tanda Bahaya</a>
+          <a href="#imunisasi" class="quick-btn"><span>💉</span> Imunisasi</a>
+          <a href="#kuis" class="quick-btn"><span>📝</span> Kuis Edukasi</a>
+          <a href="#profil" class="quick-btn"><span>👤</span> Profil Saya</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Edukasi ANC -->
+  <section class="section" id="edukasi-anc">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Antenatal Care</span>
+        <h2 class="section__title">Edukasi ANC</h2>
+        <p class="section__desc">Pemahaman tentang pemeriksaan kehamilan (ANC) membantu ibu hamil memantau kesehatan janin dan diri sendiri.</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="info-card">
+          <div class="info-card__icon">📖</div>
+          <h3>Pengertian ANC</h3>
+          <p>Antenatal Care (ANC) adalah pemeriksaan kehamilan rutin yang dilakukan sejak awal kehamilan hingga persalinan. ANC bertujuan memantau perkembangan janin, mendeteksi komplikasi dini, dan memberikan edukasi kesehatan ibu hamil.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon">🎯</div>
+          <h3>Tujuan Pemeriksaan ANC</h3>
+          <ul>
+            <li>Memantau pertumbuhan dan perkembangan janin</li>
+            <li>Mendeteksi tanda bahaya kehamilan sejak dini</li>
+            <li>Memberikan imunisasi TT (Tetanus Toxoid)</li>
+            <li>Menyediakan tablet tambah darah (TTD)</li>
+            <li>Memberikan edukasi persiapan persalinan</li>
+            <li>Merencanakan metode KB pasca persalinan</li>
+          </ul>
+        </div>
+        <div class="info-card info-card--highlight">
+          <div class="info-card__icon">📅</div>
+          <h3>Jadwal ANC Standar (Kemenkes)</h3>
+          <div class="schedule-table">
+            <div class="schedule-row"><span>Kunjungan 1</span><span>Usia kehamilan ≤ 12 minggu</span></div>
+            <div class="schedule-row"><span>Kunjungan 2</span><span>Usia kehamilan 13–16 minggu</span></div>
+            <div class="schedule-row"><span>Kunjungan 3</span><span>Usia kehamilan 20–24 minggu</span></div>
+            <div class="schedule-row"><span>Kunjungan 4</span><span>Usia kehamilan 28–32 minggu</span></div>
+            <div class="schedule-row"><span>Kunjungan 5</span><span>Usia kehamilan 36–38 minggu</span></div>
+            <div class="schedule-row"><span>Kunjungan 6</span><span>Usia kehamilan 39–40 minggu</span></div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon">✅</div>
+          <h3>Persiapan Sebelum ANC</h3>
+          <ul>
+            <li>Bawa buku KIA (Kesehatan Ibu dan Anak)</li>
+            <li>Catat keluhan atau gejala yang dirasakan</li>
+            <li>Bawa hasil pemeriksaan sebelumnya (jika ada)</li>
+            <li>Gunakan pakaian nyaman dan mudah diangkat</li>
+            <li>Hadir tepat waktu sesuai jadwal</li>
+            <li>Siapkan pertanyaan untuk tenaga kesehatan</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tips-box">
+        <h3>💡 Materi Edukasi yang Mudah Dipahami</h3>
+        <div class="tips-grid">
+          <div class="tip-item"><strong>Trimester 1:</strong> Perubahan tubuh, mual muntah, pentingnya asam folat, hindari rokok & alkohol.</div>
+          <div class="tip-item"><strong>Trimester 2:</strong> Gerakan janin, nutrisi seimbang, olahraga ringan, persiapan persalinan.</div>
+          <div class="tip-item"><strong>Trimester 3:</strong> Tanda persalinan, tanda bahaya, persiapan barang bayi, KB pasca persalinan.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nutrisi Ibu Hamil -->
+  <section class="section section--alt" id="nutrisi">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Gizi Seimbang</span>
+        <h2 class="section__title">Nutrisi Ibu Hamil</h2>
+        <p class="section__desc">Asupan gizi yang cukup sangat penting untuk kesehatan ibu dan pertumbuhan optimal janin.</p>
+      </div>
+
+      <div class="cards-grid cards-grid--2">
+        <div class="info-card">
+          <div class="info-card__icon">🍽️</div>
+          <h3>Kebutuhan Gizi Ibu Hamil</h3>
+          <p>Ibu hamil membutuhkan tambahan ±300–450 kkal/hari di trimester 2–3. Pastikan asupan:</p>
+          <ul>
+            <li><strong>Protein:</strong> telur, ikan, daging, tempe, tahu (±75 g/hari)</li>
+            <li><strong>Karbohidrat:</strong> nasi, ubi, jagung sebagai sumber energi</li>
+            <li><strong>Lemak sehat:</strong> alpukat, kacang, minyak zaitun</li>
+            <li><strong>Vitamin & mineral:</strong> sayur, buah, susu</li>
+            <li><strong>Asam folat:</strong> sayur hijau, kacang-kacangan</li>
+            <li><strong>Kalsium:</strong> susu, ikan teri, sayuran hijau</li>
+          </ul>
+        </div>
+        <div class="info-card info-card--green">
+          <div class="info-card__icon">✅</div>
+          <h3>Makanan Sehat yang Dianjurkan</h3>
+          <div class="food-tags">
+            <span class="food-tag food-tag--good">Sayur bayam</span>
+            <span class="food-tag food-tag--good">Brokoli</span>
+            <span class="food-tag food-tag--good">Ikan salmon</span>
+            <span class="food-tag food-tag--good">Telur</span>
+            <span class="food-tag food-tag--good">Alpukat</span>
+            <span class="food-tag food-tag--good">Pisang</span>
+            <span class="food-tag food-tag--good">Kacang almond</span>
+            <span class="food-tag food-tag--good">Yogurt</span>
+            <span class="food-tag food-tag--good">Ubi jalar</span>
+            <span class="food-tag food-tag--good">Daging tanpa lemak</span>
+            <span class="food-tag food-tag--good">Tempe & tahu</span>
+            <span class="food-tag food-tag--good">Buah jeruk</span>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon">💊</div>
+          <h3>Tablet Tambah Darah (TTD)</h3>
+          <p>TTD mengandung zat besi untuk mencegah anemia kehamilan. Aturan konsumsi:</p>
+          <ul>
+            <li>Minum <strong>1 tablet TTD (60 mg)</strong> setiap hari</li>
+            <li>Konsumsi setelah makan untuk mengurangi mual</li>
+            <li>Hindari minum bersama teh/kopi (menghambat penyerapan zat besi)</li>
+            <li>Minum bersama jus jeruk atau makanan vit C untuk meningkatkan penyerapan</li>
+            <li>Konsumsi rutin selama kehamilan dan pasca persalinan</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon">💧</div>
+          <h3>Kebutuhan Cairan Harian</h3>
+          <p>Ibu hamil membutuhkan <strong>8–10 gelas air</strong> (±2 liter) per hari untuk:</p>
+          <ul>
+            <li>Meningkatkan volume darah ibu hamil</li>
+            <li>Membantu pembentukan cairan ketuban</li>
+            <li>Mencegah dehidrasi dan sembelit</li>
+            <li>Mengurangi risiko infeksi saluran kemih</li>
+          </ul>
+          <p class="mt-sm">Tips: bawa botol air kemana-mana, perbanyak buah berair, kurangi minuman bersoda.</p>
+        </div>
+      </div>
+
+      <div class="info-card info-card--danger mt-lg">
+        <div class="info-card__icon">🚫</div>
+        <h3>Makanan & Minuman yang Perlu Dihindari</h3>
+        <div class="food-tags">
+          <span class="food-tag food-tag--bad">Alkohol</span>
+          <span class="food-tag food-tag--bad">Rokok</span>
+          <span class="food-tag food-tag--bad">Ikan bermerkuri tinggi (hiu, tuna mentah)</span>
+          <span class="food-tag food-tag--bad">Daging/setengah matang</span>
+          <span class="food-tag food-tag--bad">Telur mentah</span>
+          <span class="food-tag food-tag--bad">Susu tidak pasteurisasi</span>
+          <span class="food-tag food-tag--bad">Keju lunak import</span>
+          <span class="food-tag food-tag--bad">Kafein berlebihan (>200 mg/hari)</span>
+          <span class="food-tag food-tag--bad">Makanan pedas berlebihan</span>
+          <span class="food-tag food-tag--bad">Gula & garam berlebih</span>
+          <span class="food-tag food-tag--bad">Makanan kaleng/kemasan tidak higienis</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tanda Bahaya Kehamilan -->
+  <section class="section" id="tanda-bahaya">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Deteksi Dini</span>
+        <h2 class="section__title">Tanda Bahaya Kehamilan</h2>
+        <p class="section__desc">Kenali tanda bahaya sejak dini. Segera ke fasilitas kesehatan terdekat jika mengalami gejala berikut.</p>
+      </div>
+
+      <div class="danger-grid" id="dangerGrid">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="emergency-box">
+        <div class="emergency-box__icon">🚨</div>
+        <div>
+          <h3>Rekomendasi Tindakan Darurat</h3>
+          <p>Jika mengalami <strong>satu atau lebih</strong> tanda bahaya di atas, segera:</p>
+          <ol>
+            <li>Hubungi tenaga kesehatan atau bidan terdekat</li>
+            <li>Kunjungi Puskesmas / RS / klinik 24 jam terdekat</li>
+            <li>Bawa buku KIA dan kartu identitas</li>
+            <li>Jangan menunda — setiap menit sangat berharga</li>
+          </ol>
+          <p class="emergency-hotline">Hotline Kemenkes: <strong>1500-567</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jadwal Imunisasi -->
+  <section class="section section--alt" id="imunisasi">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Imunisasi Dasar</span>
+        <h2 class="section__title">Jadwal Imunisasi Anak</h2>
+        <p class="section__desc">Pantau jadwal imunisasi anak dan tandai yang sudah dilakukan. Imunisasi melindungi anak dari penyakit berbahaya.</p>
+      </div>
+
+      <div class="immun-status" id="immunStatus">
+        <div class="immun-stat"><span class="immun-stat__num" id="immunDone">0</span><span>Selesai</span></div>
+        <div class="immun-stat"><span class="immun-stat__num" id="immunPending">0</span><span>Belum</span></div>
+        <div class="immun-stat immun-stat--next"><span class="immun-stat__num" id="immunNext">—</span><span>Imunisasi Berikutnya</span></div>
+      </div>
+
+      <div class="immun-list" id="immunList">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Kuis Edukasi -->
+  <section class="section" id="kuis">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Uji Pengetahuan</span>
+        <h2 class="section__title">Kuis Edukasi</h2>
+        <p class="section__desc">Uji pemahaman Anda tentang ANC, nutrisi, tanda bahaya, dan imunisasi anak.</p>
+      </div>
+
+      <div class="quiz-categories" id="quizCategories">
+        <button class="quiz-cat-btn active" data-category="anc">📋 ANC</button>
+        <button class="quiz-cat-btn" data-category="nutrisi">🥗 Nutrisi</button>
+        <button class="quiz-cat-btn" data-category="bahaya">⚠️ Tanda Bahaya</button>
+        <button class="quiz-cat-btn" data-category="imunisasi">💉 Imunisasi</button>
+      </div>
+
+      <div class="quiz-container" id="quizContainer">
+        <div class="quiz-progress">
+          <div class="quiz-progress__bar" id="quizProgressBar"></div>
+        </div>
+        <div class="quiz-question" id="quizQuestion">
+          <span class="quiz-number" id="quizNumber">Soal 1/5</span>
+          <h3 id="quizQuestionText">Pilih kategori kuis untuk memulai</h3>
+          <div class="quiz-options" id="quizOptions"></div>
+        </div>
+        <div class="quiz-actions">
+          <button class="btn btn--outline" id="quizPrev" disabled>← Sebelumnya</button>
+          <button class="btn btn--primary" id="quizNext">Selanjutnya →</button>
+        </div>
+      </div>
+
+      <div class="quiz-result hidden" id="quizResult">
+        <div class="quiz-result__icon" id="quizResultIcon">🎉</div>
+        <h3 id="quizResultTitle">Hasil Kuis</h3>
+        <div class="quiz-score" id="quizScore">0/5</div>
+        <p id="quizResultMessage"></p>
+        <button class="btn btn--primary" id="quizRetry">Ulangi Kuis</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profil Pengguna -->
+  <section class="section section--alt" id="profil">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Data Pribadi</span>
+        <h2 class="section__title">Manajemen Data Pengguna</h2>
+        <p class="section__desc">Kelola profil ibu hamil, usia kehamilan, dan riwayat pemeriksaan.</p>
+      </div>
+
+      <div class="profile-layout">
+        <form class="profile-form" id="profileForm">
+          <h3>Data Ibu Hamil</h3>
+          <div class="form-group">
+            <label for="profileName">Nama Lengkap</label>
+            <input type="text" id="profileName" placeholder="Masukkan nama lengkap" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="profileHPHT">HPHT (Hari Pertama Haid Terakhir)</label>
+              <input type="date" id="profileHPHT" required />
+            </div>
+            <div class="form-group">
+              <label for="profileWeight">Berat Badan (kg)</label>
+              <input type="number" id="profileWeight" placeholder="65" step="0.1" min="30" max="200" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="profileBP">Tekanan Darah</label>
+              <input type="text" id="profileBP" placeholder="120/80 mmHg" />
+            </div>
+            <div class="form-group">
+              <label for="profileBloodType">Golongan Darah</label>
+              <select id="profileBloodType">
+                <option value="">Pilih</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="AB">AB</option>
+                <option value="O">O</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="profileChildName">Nama Anak (untuk imunisasi)</label>
+            <input type="text" id="profileChildName" placeholder="Nama anak" />
+          </div>
+          <div class="form-group">
+            <label for="profileChildDOB">Tanggal Lahir Anak</label>
+            <input type="date" id="profileChildDOB" />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">💾 Simpan Profil</button>
+            <button type="button" class="btn btn--outline" id="profileReset">🗑️ Reset Data</button>
+          </div>
+        </form>
+
+        <div class="profile-history">
+          <h3>Riwayat ANC</h3>
+          <div class="history-list" id="ancHistory">
+            <p class="empty-state">Belum ada riwayat ANC. Data akan muncul setelah profil disimpan.</p>
+          </div>
+
+          <h3 class="mt-lg">Info Kehamilan</h3>
+          <div class="pregnancy-info" id="pregnancyInfo">
+            <div class="preg-info-item"><span>Usia Kehamilan</span><strong id="infoGestationalAge">—</strong></div>
+            <div class="preg-info-item"><span>Perkiraan Lahir (HPL)</span><strong id="infoDueDate">—</strong></div>
+            <div class="preg-info-item"><span>Trimester</span><strong id="infoTrimester">—</strong></div>
+            <div class="preg-info-item"><span>Kunjungan ANC Berikutnya</span><strong id="infoNextANC">—</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__content">
+      <div class="footer__brand">
+        <span class="nav__logo-icon">♡</span>
+        <span>Rumah<strong>KIA</strong></span>
+        <p>Pendamping ibu hamil untuk edukasi kesehatan, deteksi dini tanda bahaya, dan pemantauan imunisasi anak.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Menu</h4>
+        <a href="#beranda">Beranda</a>
+        <a href="#edukasi-anc">Edukasi ANC</a>
+        <a href="#nutrisi">Nutrisi</a>
+        <a href="#tanda-bahaya">Tanda Bahaya</a>
+        <a href="#imunisasi">Imunisasi</a>
+        <a href="#kuis">Kuis</a>
+        <a href="#profil">Profil</a>
+      </div>
+      <div class="footer__contact">
+        <h4>Kontak Darurat</h4>
+        <p>Hotline Kemenkes: <strong>1500-567</strong></p>
+        <p>Puskesmas / RS terdekat 24 jam</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 RumahKIA. Dibuat dengan ♡ untuk ibu dan anak Indonesia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+/* =============================================
+   RumahKIA – Application Logic
+   ============================================= */
+
+const STORAGE_KEY = 'rumahkia_data';
+
+// ─── Data ───────────────────────────────────────
+
+const DANGER_SIGNS = [
+  {
+    icon: '🩸',
+    title: 'Perdarahan Saat Kehamilan',
+    desc: 'Perdarahan dari jalan lahir, terutama trimester 2–3, bisa menandakan plasenta previa, abruption, atau persalinan prematur.',
+    action: 'Segera ke RS/Puskesmas — jangan menunda!'
+  },
+  {
+    icon: '🤕',
+    title: 'Sakit Kepala Hebat',
+    desc: 'Sakit kepala parah yang tidak reda dengan obat biasa, disertai gangguan penglihatan, bisa tanda preeklampsia.',
+    action: 'Periksa tekanan darah segera di fasilitas kesehatan.'
+  },
+  {
+    icon: '👁️',
+    title: 'Pandangan Kabur',
+    desc: 'Penglihatan kabur, bintik-bintik, atau kehilangan penglihatan bisa menandakan preeklampsia/eclampsia.',
+    action: 'Segera ke tenaga kesehatan untuk pemeriksaan tekanan darah.'
+  },
+  {
+    icon: '🤚',
+    title: 'Pembengkakan Wajah & Tangan',
+    desc: 'Bengkak mendadak di wajah, tangan, atau kaki (edema) bisa tanda preeklampsia, terutama bila disertai sakit kepala.',
+    action: 'Periksa tekanan darah dan protein urine segera.'
+  },
+  {
+    icon: '⚡',
+    title: 'Kejang',
+    desc: 'Kejang saat kehamilan adalah tanda eclampsia — kondisi darurat yang mengancam jiwa ibu dan janin.',
+    action: 'SEGERA ke RS — panggil ambulans (118/119)!'
+  },
+  {
+    icon: '🤰',
+    title: 'Nyeri Perut Hebat',
+    desc: 'Nyeri perut tajam dan terus-menerus bisa menandakan abruption plasenta, apendisitis, atau persalinan prematur.',
+    action: 'Segera ke fasilitas kesehatan terdekat.'
+  },
+  {
+    icon: '💧',
+    title: 'Ketuban Pecah Dini',
+    desc: 'Keluar cairan dari jalan lahir sebelum waktunya (KPD) meningkatkan risiko infeksi dan persalinan prematur.',
+    action: 'Segera ke RS — catat waktu pecahnya ketuban.'
+  },
+  {
+    icon: '👶',
+    title: 'Berkurangnya Gerakan Janin',
+    desc: 'Gerakan janin berkurang drastis (<10 gerakan dalam 2 jam) bisa menandakan janin kurang oksigen.',
+    action: 'Segera ke fasilitas kesehatan untuk pemeriksaan USG/Doppler.'
+  },
+  {
+    icon: '🌡️',
+    title: 'Demam Tinggi',
+    desc: 'Demam >38°C saat kehamilan bisa menandakan infeksi yang berbahaya bagi janin (TORCH, infeksi saluran kemih).',
+    action: 'Konsultasi tenaga kesehatan — jangan minum obat sembarangan.'
+  },
+  {
+    icon: '🫁',
+    title: 'Sesak Napas',
+    desc: 'Sesak napas hebat, nyeri dada, atau batuk darah bisa menandakan emboli paru atau preeklampsia berat.',
+    action: 'Segera ke RS — kondisi darurat!'
+  }
+];
+
+const IMMUNIZATION_SCHEDULE = [
+  { id: 'hb0', name: 'HB-0 (Hepatitis B)', ageMonths: 0, ageLabel: '0 hari (≤24 jam)' },
+  { id: 'bcg', name: 'BCG', ageMonths: 1, ageLabel: '1 bulan' },
+  { id: 'dpt1', name: 'DPT-HB-Hib 1', ageMonths: 2, ageLabel: '2 bulan' },
+  { id: 'polio1', name: 'Polio 1', ageMonths: 2, ageLabel: '2 bulan' },
+  { id: 'pcv1', name: 'PCV 1', ageMonths: 2, ageLabel: '2 bulan' },
+  { id: 'dpt2', name: 'DPT-HB-Hib 2', ageMonths: 3, ageLabel: '3 bulan' },
+  { id: 'polio2', name: 'Polio 2', ageMonths: 3, ageLabel: '3 bulan' },
+  { id: 'pcv2', name: 'PCV 2', ageMonths: 3, ageLabel: '3 bulan' },
+  { id: 'dpt3', name: 'DPT-HB-Hib 3', ageMonths: 4, ageLabel: '4 bulan' },
+  { id: 'polio3', name: 'Polio 3', ageMonths: 4, ageLabel: '4 bulan' },
+  { id: 'pcv3', name: 'PCV 3', ageMonths: 4, ageLabel: '4 bulan' },
+  { id: 'ipv', name: 'IPV', ageMonths: 4, ageLabel: '4 bulan' },
+  { id: 'campak', name: 'Campak / MR', ageMonths: 9, ageLabel: '9 bulan' },
+  { id: 'dpt4', name: 'DPT-HB-Hib Lanjutan', ageMonths: 18, ageLabel: '18 bulan' },
+  { id: 'polio4', name: 'Polio 4', ageMonths: 18, ageLabel: '18 bulan' },
+  { id: 'campak2', name: 'Campak / MR 2', ageMonths: 18, ageLabel: '18 bulan' },
+];
+
+const ANC_SCHEDULE = [
+  { visit: 1, minWeek: 0, maxWeek: 12, label: '≤ 12 minggu' },
+  { visit: 2, minWeek: 13, maxWeek: 16, label: '13–16 minggu' },
+  { visit: 3, minWeek: 20, maxWeek: 24, label: '20–24 minggu' },
+  { visit: 4, minWeek: 28, maxWeek: 32, label: '28–32 minggu' },
+  { visit: 5, minWeek: 36, maxWeek: 38, label: '36–38 minggu' },
+  { visit: 6, minWeek: 39, maxWeek: 42, label: '39–40 minggu' },
+];
+
+const QUIZ_DATA = {
+  anc: [
+    { q: 'Berapa minimal jumlah kunjungan ANC menurut standar Kemenkes?', options: ['2 kali', '4 kali', '6 kali', '10 kali'], answer: 2 },
+    { q: 'Kapan kunjungan ANC pertama sebaiknya dilakukan?', options: ['Usia kehamilan ≤12 minggu', 'Usia kehamilan 20 minggu', 'Usia kehamilan 36 minggu', 'Saat persalinan'], answer: 0 },
+    { q: 'Apa yang harus dibawa saat pemeriksaan ANC?', options: ['Buku KIA', 'Paspor', 'SIM', 'Kartu kredit'], answer: 0 },
+    { q: 'Imunisasi TT diberikan kepada ibu hamil untuk mencegah...', options: ['Campak', 'Tetanus', 'Polio', 'Hepatitis A'], answer: 1 },
+    { q: 'Tujuan ANC yang paling penting adalah...', options: ['Memantau kesehatan ibu & janin', 'Menentukan jenis kelamin bayi', 'Memilih nama bayi', 'Mengatur jadwal pesta'], answer: 0 },
+  ],
+  nutrisi: [
+    { q: 'Berapa tablet tambah darah (TTD) yang harus diminum ibu hamil per hari?', options: ['1 tablet (60 mg)', '3 tablet', '5 tablet', 'Tidak perlu'], answer: 0 },
+    { q: 'Kebutuhan cairan ibu hamil per hari sekitar...', options: ['2 gelas', '8–10 gelas (±2 liter)', '15 gelas', 'Tidak perlu minum air'], answer: 1 },
+    { q: 'Makanan berikut yang DILARANG untuk ibu hamil adalah...', options: ['Sayur bayam', 'Alkohol', 'Telur matang', 'Ikan salmon'], answer: 1 },
+    { q: 'Asam folat penting untuk mencegah...', options: ['Cacat tabung saraf', 'Demam', 'Batuk', 'Alergi'], answer: 0 },
+    { q: 'Konsumsi kafein ibu hamil sebaiknya dibatasi maksimal...', options: ['200 mg/hari', '500 mg/hari', '1000 mg/hari', 'Tidak dibatasi'], answer: 0 },
+  ],
+  bahaya: [
+    { q: 'Perdarahan saat kehamilan trimester 2–3 termasuk tanda...', options: ['Normal', 'Bahaya', 'Tanda persalinan normal', 'Tidak perlu khawatir'], answer: 1 },
+    { q: 'Kejang saat kehamilan menandakan kondisi...', options: ['Eclampsia (darurat)', 'Normal', 'Mual biasa', 'Sembelit'], answer: 0 },
+    { q: 'Gerakan janin berkurang drastis (<10 gerakan/2 jam) harus...', options: ['Diabaikan', 'Segera diperiksa ke faskes', 'Ditunggu sampai persalinan', 'Diberi obat sendiri'], answer: 1 },
+    { q: 'Sakit kepala hebat + pandangan kabur bisa tanda...', options: ['Preeklampsia', 'Flu biasa', 'Migrain ringan', 'Kurang tidur'], answer: 0 },
+    { q: 'Ketuban pecah dini harus segera...', options: ['Diperiksa ke RS', 'Diabaikan', 'Ditambal sendiri', 'Ditunggu 1 minggu'], answer: 0 },
+  ],
+  imunisasi: [
+    { q: 'Imunisasi HB-0 (Hepatitis B) diberikan pada usia...', options: ['0 hari (≤24 jam)', '6 bulan', '1 tahun', '5 tahun'], answer: 0 },
+    { q: 'Imunisasi BCG diberikan pada usia...', options: ['0 hari', '1 bulan', '6 bulan', '2 tahun'], answer: 1 },
+    { q: 'Imunisasi Campak/MR pertama diberikan pada usia...', options: ['2 bulan', '4 bulan', '9 bulan', '5 tahun'], answer: 2 },
+    { q: 'Imunisasi DPT-HB-Hib lanjutan diberikan pada usia...', options: ['2 bulan', '9 bulan', '18 bulan', '5 tahun'], answer: 2 },
+    { q: 'Tujuan imunisasi dasar lengkap adalah...', options: ['Melindungi anak dari penyakit berbahaya', 'Menambah berat badan', 'Mempercepat tumbuh gigi', 'Mengubah warna kulit'], answer: 0 },
+  ],
+};
+
+// ─── State ──────────────────────────────────────
+
+let appData = loadData();
+let quizState = { category: 'anc', currentIndex: 0, answers: [], finished: false };
+
+// ─── Storage ────────────────────────────────────
+
+function loadData() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : getDefaultData();
+  } catch {
+    return getDefaultData();
+  }
+}
+
+function getDefaultData() {
+  return {
+    profile: {
+      name: '',
+      hpht: '',
+      weight: '',
+      bloodPressure: '',
+      bloodType: '',
+      childName: '',
+      childDOB: '',
+    },
+    immunization: {},
+  };
+}
+
+function saveData() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(appData));
+}
+
+// ─── Pregnancy Calculations ─────────────────────
+
+function calcGestationalAge(hpht) {
+  if (!hpht) return null;
+  const start = new Date(hpht);
+  const now = new Date();
+  const diffMs = now - start;
+  const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const weeks = Math.floor(totalDays / 7);
+  const days = totalDays % 7;
+  return { weeks, days, totalDays };
+}
+
+function calcDueDate(hpht) {
+  if (!hpht) return null;
+  const start = new Date(hpht);
+  const due = new Date(start);
+  due.setDate(due.getDate() + 280);
+  return due;
+}
+
+function getTrimester(weeks) {
+  if (weeks <= 12) return 'Trimester 1';
+  if (weeks <= 27) return 'Trimester 2';
+  return 'Trimester 3';
+}
+
+function getNextANC(weeks) {
+  for (const anc of ANC_SCHEDULE) {
+    if (weeks < anc.minWeek) {
+      return anc;
+    }
+    if (weeks >= anc.minWeek && weeks <= anc.maxWeek) {
+      return { ...anc, current: true };
+    }
+  }
+  return ANC_SCHEDULE[ANC_SCHEDULE.length - 1];
+}
+
+function getANCHistory(weeks) {
+  return ANC_SCHEDULE.filter(a => weeks >= a.minWeek).map(a => ({
+    visit: a.visit,
+    label: a.label,
+    status: weeks > a.maxWeek ? 'Selesai' : weeks >= a.minWeek && weeks <= a.maxWeek ? 'Sedang berlangsung' : 'Belum',
+  }));
+}
+
+function formatDate(date) {
+  if (!date) return '—';
+  const d = date instanceof Date ? date : new Date(date);
+  return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+function calcChildAgeMonths(dob) {
+  if (!dob) return null;
+  const birth = new Date(dob);
+  const now = new Date();
+  const months = (now.getFullYear() - birth.getFullYear()) * 12 + (now.getMonth() - birth.getMonth());
+  const days = now.getDate() - birth.getDate();
+  return days < 0 ? months - 1 : months;
+}
+
+// ─── UI Updates ─────────────────────────────────
+
+function updateDashboard() {
+  const { hpht, weight, bloodPressure } = appData.profile;
+  const ga = calcGestationalAge(hpht);
+
+  const dashGA = document.getElementById('dashGestationalAge');
+  const dashDue = document.getElementById('dashDueDate');
+  const dashNextANC = document.getElementById('dashNextANC');
+  const dashANCDetail = document.getElementById('dashANCDetail');
+  const dashHealth = document.getElementById('dashHealth');
+  const dashHealthDetail = document.getElementById('dashHealthDetail');
+
+  if (ga) {
+    dashGA.textContent = `${ga.weeks} minggu ${ga.days} hari`;
+    const due = calcDueDate(hpht);
+    dashDue.textContent = `HPL: ${formatDate(due)}`;
+
+    const next = getNextANC(ga.weeks);
+    if (next.current) {
+      dashNextANC.textContent = `Kunjungan ke-${next.visit}`;
+      dashANCDetail.textContent = `Usia ${next.label} — sedang berlangsung`;
+    } else if (ga.weeks < next.minWeek) {
+      dashNextANC.textContent = `Kunjungan ke-${next.visit}`;
+      dashANCDetail.textContent = `Usia ${next.label}`;
+    } else {
+      dashNextANC.textContent = 'ANC Lengkap ✓';
+      dashANCDetail.textContent = 'Semua kunjungan standar tercapai';
+    }
+  } else {
+    dashGA.textContent = '—';
+    dashDue.textContent = 'Lengkapi profil untuk melihat';
+    dashNextANC.textContent = '—';
+    dashANCDetail.textContent = 'Kunjungan ke-—';
+  }
+
+  if (weight || bloodPressure) {
+    dashHealth.textContent = bloodPressure || '—';
+    dashHealthDetail.textContent = weight ? `Berat badan: ${weight} kg` : 'Tekanan darah & berat badan';
+  } else {
+    dashHealth.textContent = '—';
+    dashHealthDetail.textContent = 'Tekanan darah & berat badan';
+  }
+}
+
+function updateProfileInfo() {
+  const { hpht } = appData.profile;
+  const ga = calcGestationalAge(hpht);
+
+  document.getElementById('infoGestationalAge').textContent = ga ? `${ga.weeks} minggu ${ga.days} hari` : '—';
+  document.getElementById('infoDueDate').textContent = hpht ? formatDate(calcDueDate(hpht)) : '—';
+  document.getElementById('infoTrimester').textContent = ga ? getTrimester(ga.weeks) : '—';
+
+  if (ga) {
+    const next = getNextANC(ga.weeks);
+    document.getElementById('infoNextANC').textContent = next.current
+      ? `Kunjungan ke-${next.visit} (${next.label})`
+      : ga.weeks < next.minWeek
+        ? `Kunjungan ke-${next.visit} (${next.label})`
+        : 'ANC Lengkap ✓';
+  } else {
+    document.getElementById('infoNextANC').textContent = '—';
+  }
+
+  const historyEl = document.getElementById('ancHistory');
+  if (ga) {
+    const history = getANCHistory(ga.weeks);
+    historyEl.innerHTML = history.map(h => `
+      <div class="history-item">
+        <div>
+          <span class="history-item__visit">Kunjungan ${h.visit}</span>
+          <span class="history-item__week"> — Usia ${h.label}</span>
+        </div>
+        <span class="immun-item__status immun-item__status--${h.status === 'Selesai' ? 'done' : h.status === 'Sedang berlangsung' ? 'upcoming' : 'pending'}">${h.status}</span>
+      </div>
+    `).join('');
+  } else {
+    historyEl.innerHTML = '<p class="empty-state">Belum ada riwayat ANC. Data akan muncul setelah profil disimpan.</p>';
+  }
+}
+
+function populateProfileForm() {
+  const p = appData.profile;
+  document.getElementById('profileName').value = p.name || '';
+  document.getElementById('profileHPHT').value = p.hpht || '';
+  document.getElementById('profileWeight').value = p.weight || '';
+  document.getElementById('profileBP').value = p.bloodPressure || '';
+  document.getElementById('profileBloodType').value = p.bloodType || '';
+  document.getElementById('profileChildName').value = p.childName || '';
+  document.getElementById('profileChildDOB').value = p.childDOB || '';
+}
+
+// ─── Danger Signs ───────────────────────────────
+
+function renderDangerSigns() {
+  const grid = document.getElementById('dangerGrid');
+  grid.innerHTML = DANGER_SIGNS.map(d => `
+    <div class="danger-card">
+      <div class="danger-card__icon">${d.icon}</div>
+      <h4>${d.title}</h4>
+      <p>${d.desc}</p>
+      <div class="danger-card__action">${d.action}</div>
+    </div>
+  `).join('');
+}
+
+// ─── Immunization ───────────────────────────────
+
+function renderImmunization() {
+  const list = document.getElementById('immunList');
+  const childAge = calcChildAgeMonths(appData.profile.childDOB);
+  let doneCount = 0;
+  let nextImmun = null;
+
+  list.innerHTML = IMMUNIZATION_SCHEDULE.map(item => {
+    const isDone = !!appData.immunization[item.id];
+    if (isDone) doneCount++;
+
+    let statusClass = 'pending';
+    let statusText = 'Belum';
+
+    if (isDone) {
+      statusClass = 'done';
+      statusText = 'Selesai';
+    } else if (childAge !== null && childAge >= item.ageMonths && !nextImmun) {
+      statusClass = 'upcoming';
+      statusText = 'Perlu Segera';
+      if (!nextImmun) nextImmun = item;
+    } else if (childAge !== null && childAge >= item.ageMonths) {
+      statusClass = 'upcoming';
+      statusText = 'Terlewat';
+    }
+
+    return `
+      <div class="immun-item ${isDone ? 'done' : ''}">
+        <input type="checkbox" class="immun-item__check" data-id="${item.id}" ${isDone ? 'checked' : ''} />
+        <div class="immun-item__info">
+          <div class="immun-item__name">${item.name}</div>
+          <div class="immun-item__age">Usia: ${item.ageLabel}</div>
+        </div>
+        <span class="immun-item__status immun-item__status--${statusClass}">${statusText}</span>
+      </div>
+    `;
+  }).join('');
+
+  document.getElementById('immunDone').textContent = doneCount;
+  document.getElementById('immunPending').textContent = IMMUNIZATION_SCHEDULE.length - doneCount;
+
+  if (nextImmun) {
+    document.getElementById('immunNext').textContent = nextImmun.name;
+  } else if (doneCount === IMMUNIZATION_SCHEDULE.length) {
+    document.getElementById('immunNext').textContent = 'Lengkap ✓';
+  } else {
+    const pending = IMMUNIZATION_SCHEDULE.find(i => !appData.immunization[i.id]);
+    document.getElementById('immunNext').textContent = pending ? pending.name : '—';
+  }
+
+  list.querySelectorAll('.immun-item__check').forEach(cb => {
+    cb.addEventListener('change', (e) => {
+      appData.immunization[e.target.dataset.id] = e.target.checked;
+      saveData();
+      renderImmunization();
+      showToast('Status imunisasi diperbarui!', 'success');
+    });
+  });
+}
+
+// ─── Quiz ───────────────────────────────────────
+
+function initQuiz(category) {
+  quizState = { category, currentIndex: 0, answers: new Array(QUIZ_DATA[category].length).fill(null), finished: false };
+  document.getElementById('quizContainer').classList.remove('hidden');
+  document.getElementById('quizResult').classList.add('hidden');
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+  const questions = QUIZ_DATA[quizState.category];
+  const q = questions[quizState.currentIndex];
+  const total = questions.length;
+
+  document.getElementById('quizNumber').textContent = `Soal ${quizState.currentIndex + 1}/${total}`;
+  document.getElementById('quizQuestionText').textContent = q.q;
+  document.getElementById('quizProgressBar').style.width = `${((quizState.currentIndex) / total) * 100}%`;
+
+  const optionsEl = document.getElementById('quizOptions');
+  optionsEl.innerHTML = q.options.map((opt, i) => `
+    <label class="quiz-option ${quizState.answers[quizState.currentIndex] === i ? 'selected' : ''}" data-index="${i}">
+      <input type="radio" name="quizAnswer" value="${i}" ${quizState.answers[quizState.currentIndex] === i ? 'checked' : ''} />
+      ${opt}
+    </label>
+  `).join('');
+
+  optionsEl.querySelectorAll('.quiz-option').forEach(el => {
+    el.addEventListener('click', () => {
+      const idx = parseInt(el.dataset.index);
+      quizState.answers[quizState.currentIndex] = idx;
+      optionsEl.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      el.querySelector('input').checked = true;
+    });
+  });
+
+  document.getElementById('quizPrev').disabled = quizState.currentIndex === 0;
+  document.getElementById('quizNext').textContent = quizState.currentIndex === total - 1 ? 'Selesai ✓' : 'Selanjutnya →';
+}
+
+function finishQuiz() {
+  const questions = QUIZ_DATA[quizState.category];
+  let score = 0;
+  questions.forEach((q, i) => {
+    if (quizState.answers[i] === q.answer) score++;
+  });
+
+  const total = questions.length;
+  const pct = Math.round((score / total) * 100);
+
+  document.getElementById('quizContainer').classList.add('hidden');
+  document.getElementById('quizResult').classList.remove('hidden');
+  document.getElementById('quizScore').textContent = `${score}/${total}`;
+  document.getElementById('quizResultIcon').textContent = pct >= 80 ? '🎉' : pct >= 60 ? '👍' : '📚';
+
+  let message = '';
+  if (pct >= 80) message = `Luar biasa! Skor ${pct}% — pengetahuan Anda sangat baik!`;
+  else if (pct >= 60) message = `Bagus! Skor ${pct}% — terus tingkatkan pengetahuan Anda.`;
+  else message = `Skor ${pct}% — pelajari kembali materi edukasi di RumahKIA.`;
+
+  document.getElementById('quizResultTitle').textContent = pct >= 80 ? 'Hebat!' : pct >= 60 ? 'Cukup Baik' : 'Perlu Belajar Lagi';
+  document.getElementById('quizResultMessage').textContent = message;
+}
+
+// ─── Toast ──────────────────────────────────────
+
+function showToast(message, type = '') {
+  const existing = document.querySelector('.toast');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.className = `toast ${type ? 'toast--' + type : ''}`;
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => toast.classList.add('show'));
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
+
+// ─── Navigation ─────────────────────────────────
+
+function initNavigation() {
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
+  const header = document.getElementById('header');
+
+  toggle.addEventListener('click', () => menu.classList.toggle('open'));
+
+  menu.querySelectorAll('.nav__link').forEach(link => {
+    link.addEventListener('click', () => menu.classList.remove('open'));
+  });
+
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav__link');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+}
+
+// ─── Event Listeners ────────────────────────────
+
+function initEvents() {
+  document.getElementById('profileForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    appData.profile = {
+      name: document.getElementById('profileName').value.trim(),
+      hpht: document.getElementById('profileHPHT').value,
+      weight: document.getElementById('profileWeight').value,
+      bloodPressure: document.getElementById('profileBP').value.trim(),
+      bloodType: document.getElementById('profileBloodType').value,
+      childName: document.getElementById('profileChildName').value.trim(),
+      childDOB: document.getElementById('profileChildDOB').value,
+    };
+    saveData();
+    updateDashboard();
+    updateProfileInfo();
+    renderImmunization();
+    showToast('Profil berhasil disimpan!', 'success');
+  });
+
+  document.getElementById('profileReset').addEventListener('click', () => {
+    if (confirm('Yakin ingin menghapus semua data? Tindakan ini tidak bisa dibatalkan.')) {
+      appData = getDefaultData();
+      saveData();
+      populateProfileForm();
+      updateDashboard();
+      updateProfileInfo();
+      renderImmunization();
+      showToast('Data berhasil direset.');
+    }
+  });
+
+  document.querySelectorAll('.quiz-cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.quiz-cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      initQuiz(btn.dataset.category);
+    });
+  });
+
+  document.getElementById('quizNext').addEventListener('click', () => {
+    const total = QUIZ_DATA[quizState.category].length;
+    if (quizState.currentIndex < total - 1) {
+      quizState.currentIndex++;
+      renderQuizQuestion();
+    } else {
+      finishQuiz();
+    }
+  });
+
+  document.getElementById('quizPrev').addEventListener('click', () => {
+    if (quizState.currentIndex > 0) {
+      quizState.currentIndex--;
+      renderQuizQuestion();
+    }
+  });
+
+  document.getElementById('quizRetry').addEventListener('click', () => {
+    initQuiz(quizState.category);
+  });
+}
+
+// ─── Init ───────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderDangerSigns();
+  populateProfileForm();
+  updateDashboard();
+  updateProfileInfo();
+  renderImmunization();
+  initQuiz('anc');
+  initNavigation();
+  initEvents();
+});
+  </script>
+</body>
+</html>
